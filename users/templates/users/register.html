@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<dir class="content-section">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Stwórz konto</legend>
+				{{ form|crispy }}
+			</fieldset>
+			<dir class="form-group">
+				<button class="btn btn-outline-info" type="submit">Sing Up</button>
+			</dir>
+		</form>
+		<dir class="border-top pt-3">
+			<small class="text-muted">Posiadasz już konto?<a class="ml-2" href="#">Sing In</a>
+			</small>
+		</dir>
+	</dir>
+{% endblock content%}
